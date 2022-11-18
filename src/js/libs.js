@@ -1,0 +1,11 @@
+//=require ../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
+//=require ../../node_modules/jquery/dist/jquery.min.js
+//=require ../../node_modules/tiny-slider/dist/min/tiny-slider.js
+//=require ../../node_modules/aos/dist/aos.js
+//=require ../../node_modules/jquery-validation/dist/jquery.validate.min.js
+//=require ../../node_modules/jquery-validation/dist/localization/messages_it.min.js
+//=require ../../node_modules/select2/dist/js/select2.min.js
+//=require ../../node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js
+//=require ../../node_modules/svg-injector/dist/svg-injector.min.js
+//=require ../../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js
+//=require ../../node_modules/js-cookie/dist/js.cookie.min.js

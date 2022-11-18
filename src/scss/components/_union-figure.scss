@@ -1,0 +1,42 @@
+.union-figure {
+	@include responsiveRatio(1, 1);
+
+	position: relative;
+
+	&__square {
+		position: absolute;
+		width: 33.3333%;
+		height: 33.3333%;
+		background-color: $primary;
+
+		&:nth-child(1) {
+			top: 0;
+			left: 0;
+		}
+
+		&:nth-child(2) {
+			top: 0;
+			left: 33.3333%;
+		}
+
+		&:nth-child(3) {
+			top: 0;
+			left: 66.6666%;
+		}
+
+		&:nth-child(4) {
+			top: 33.3333%;
+			left: 33.3333%;
+		}
+
+		&:nth-child(5) {
+			top: 33.3333%;
+			left: 66.6666%;
+		}
+
+		&:nth-child(6) {
+			bottom: 0;
+			right: 0;
+		}
+	}
+}

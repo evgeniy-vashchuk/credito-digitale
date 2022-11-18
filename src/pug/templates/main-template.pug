@@ -1,0 +1,35 @@
+include ../mixins/_mixins
+
+block vars
+
+doctype html
+html(lang= pageLang || "it")
+	head
+		include ../layout/_head.pug
+	|
+	|
+	body(class= bodyClass)
+		.wrap-for-sticky.js-wrap-for-sticky
+			// HEADER
+			include ../layout/_header.pug
+			// HEADER END
+			|
+			|
+			// CONTENT
+			main.main.js-main
+				block content
+			// CONTENT END
+			|
+			|
+			// FOOTER
+			include ../layout/_footer.pug
+			// FOOTER END
+			|
+			|
+			// COOKIES BANNER
+			include ../includes/_cookies-banner.pug
+			// COOKIES BANNER END
+		|
+		|
+		// connection JAVASCRIPT
+		include ../layout/_scripts.pug

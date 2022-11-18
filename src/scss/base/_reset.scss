@@ -1,0 +1,69 @@
+* ,
+*:hover ,
+*:focus ,
+*:active {
+	outline: none !important;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="url"],
+textarea {
+	@include placeholder {
+		line-height: normal;
+		transition: opacity 0.3s;
+	};
+
+	&:focus {
+		@include placeholder {
+			opacity: 0;
+		};
+	}
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+textarea {
+	resize: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+// hide cross icon in IE
+::-ms-clear {
+	display: none;
+}
+
+// remove full screen button for video on opera browser
+#detach-button-host {
+	display: none !important;
+}
+
+a {
+	&[href*="mailto:"] {
+		word-wrap: break-word;
+	}
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}

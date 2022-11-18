@@ -1,0 +1,110 @@
+extends ../templates/main-template.pug
+
+block vars
+	- var pageTitle = "Chi siamo - Credito Digitale";
+	- var activeMenuLink = "Chi siamo";
+
+block content
+	// SECTION WHO WE ARE
+	section.section-who-we-are.section
+		.container
+			.row
+				.col-md-8.offset-md-4
+					h2 Chi siamo
+					.text-block.mb-10
+						p Il servizio che offriamo parte da un <strong>assunto molto preciso</strong>: la digitalizzazione dei processi aziendali, qualunque essi siano, è alla base dello sviluppo economico di ciascuna realtà imprenditoriale per almeno i prossimi 10 anni.
+						p Ciò significa, come confermano tutti i macro indicatori, che se una società vuole rimanere competitiva sul mercato ed eventualmente aumentare i propri profitti, ha <strong>un'unica scelta inevitabile</strong>: iniziare o continuare il proprio processo di digitalizzazione.
+						p In questo contesto, Credito Digitale ti permette di approcciare con semplicità alla trasformazione 4.0: occupandosi della concettualizzazione e dello sviluppo informatico e allo stesso tempo dell’accesso alle agevolazioni fiscali. Grazie agli incentivi, riguardanti gli investimenti in attività di innovazione tecnologica 4.0, della <strong>legge 160 del 27 Dicembre 2019</strong> si accede al credito d’imposta, importante per realizzare con più tranquillità e in economia la tua soluzione IT ottimale. Grazie a Credito Digitale potrai digitalizzare i processi aziendali in maniera più sostenibile e conveniente.
+					.section-who-we-are__img(data-aos="fade-left")
+						img(src="img/section-who-we-are-img.jpg" alt="Image" class="of-cover")
+			.row.remove-last-child-margin
+				.col-md-4
+					.mb-6.mb-lg-0
+						h3.mb-lg-8 Mission
+						.text-block
+							p Attraverso il credito d'imposta, permettiamo alle PMI italiane di realizzare sistemi informatici ad alta avanguardia tecnologica, per incrementare la propria forza competitiva sul mercato.
+				.col-md-4
+					.mb-6.mb-lg-0
+						h3.mb-lg-8 Vision
+						.text-block
+							p Accelerare la transizione digitale e la crescita dei nostri clienti, minimizzando i rischi.
+				.col-md-4
+					.mb-6.mb-lg-0
+						h3.mb-lg-8 Values
+						ul.list-with-dash
+							li Innovazione
+							li Competitività
+							li Fiducia
+							li Sostenibilità
+							li Internazionalizzazione
+	// SECTION WHO WE ARE END
+	|
+	|
+	// SECTION OUR TEAM
+	section.section-our-team.section
+		.container
+			.text-md-center
+				h2 Il nostro team
+			|
+			|
+			.row.remove-last-child-margin
+				.col-sm-6.col-md-4
+					.card-team-member(data-aos="fade-up")
+						.card-team-member__img
+							img(src="img/card-team-member/1.jpg" alt="Image" class="of-cover")
+						|
+						|
+						.card-team-member__title-wrap
+							h5 Dott. Marco Blini
+						|
+						|
+						ul.list-with-dots
+							li Chief Financial Officer di [B]IoHT S.r.l.
+							li R&D 4.0, Taxation & Auditing
+				.col-sm-6.col-md-4
+					.card-team-member(data-aos="fade-up" data-aos-delay="150")
+						.card-team-member__img
+							img(src="img/card-team-member/2.jpg" alt="Image" class="of-cover")
+						|
+						|
+						.card-team-member__title-wrap
+							h5 Dott. Luca Blini
+						|
+						|
+						ul.list-with-dots
+							li Managing Partner di Studio Associato Crovella Blini Commercialista
+				.col-sm-6.col-md-4
+					.card-team-member(data-aos="fade-up" data-aos-delay="300")
+						.card-team-member__img
+							img(src="img/card-team-member/3.jpg" alt="Image" class="of-cover")
+						|
+						|
+						.card-team-member__title-wrap
+							h5 Dott. Matteo BLini
+						|
+						|
+						ul.list-with-dots
+							li Chief Executive Officer di [B]IoHT S.r.l.
+							li R&D 4.0, Taxation & Auditing
+				.col-sm-6.col-md-12
+					.card-team-member.horizontal(data-aos="fade-up")
+						.row.align-items-md-center
+							.col-md-8
+								.card-team-member__img
+									img(src="img/card-team-member/4.jpg" alt="Image" class="of-cover")
+							|
+							|
+							.col-md-4
+								.card-team-member__title-wrap
+									h5.mb-md-2 Mokka Studios S.r.l.
+									h6.d-none.d-md-block Technology Partner
+								|
+								|
+								.text-block.text-center.text-md-start
+									p Mokka Studios S.r.l. si occupa della concettualizzazione e della realizzazione di sistemi informatici complessi. Il principale obiettivo della società è quello di produrre tecnologie innovative a misura d'uomo e accessibili a tutti, sia dal punto di vista economico sia dell'esperienza d'uso, per favorire la piena realizzazione di un umanesimo digitale.
+	// SECTION OUR TEAM END
+	|
+	|
+	// SECTION CONTACT US
+	include ../includes/_section-contact-us.pug
+	// SECTION CONTACT US END

@@ -1,0 +1,27 @@
+.social-list {
+	@include listReset;
+
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 24px;
+
+	&__item {
+		display: inline-flex;
+		margin-bottom: 32px;
+
+		&:not(:last-child) {
+			margin-right: 32px;
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+		line-height: 1;
+		color: $secondary;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.accordion {
+	margin-bottom: 60px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 80px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		margin-bottom: 120px;
+	}
+}
+
+.accordion-header {
+	@include media-breakpoint-down(sm) {
+		font-size: 20px;
+	}
+}
+
+.accordion-button {
+	transition: color 0.3s;
+
+	> span {
+		padding-right: 20px;
+	}
+
+	&:hover {
+		color: $primary;
+	}
+
+	&:after {
+		background-position: right center;
+
+		@include media-breakpoint-down(sm) {
+			width: 12px;
+			height: 12px;
+			background-size: 12px;
+		}
+	}
+}
+
+.accordion-body {
+	@include media-breakpoint-down(sm) {
+		padding-top: 8px;
+	}
+}

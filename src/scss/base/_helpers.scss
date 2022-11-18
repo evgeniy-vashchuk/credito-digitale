@@ -1,0 +1,45 @@
+.of-contain {
+	@include absoluteCover;
+
+	object-fit: contain;
+}
+
+.of-cover {
+	@include absoluteCover;
+
+	object-fit: cover;
+
+	&.position-right {
+		object-position: right;
+	}
+}
+
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
+}
+
+.ms-sm-50-minus {
+	@include media-breakpoint-up(sm) {
+		margin-left: -50px;
+	}
+}
+
+.fs-inherit {
+	font-size: inherit !important;
+}
+
+.wrap-for-sticky {
+	position: relative;
+	min-height: 100vh;
+}
+
+.footer {
+	&.sticky {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+}

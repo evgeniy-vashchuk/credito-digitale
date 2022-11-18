@@ -1,0 +1,101 @@
+.link-with-arrow {
+	font-size: 22px;
+	font-weight: 700;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	transition: color 0.3s;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 26px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 28px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: 32px;
+	}
+
+	&:after {
+		content: "\e907";
+		font-size: 0.7em;
+		font-family: icomoon;
+		display: inline;
+		font-weight: 400;
+		margin-left: 8px;
+		vertical-align: middle;
+	}
+
+	&.text-white {
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
+	&.text-secondary {
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
+	&.text-primary {
+		&:hover {
+			color: $white !important;
+		}
+	}
+
+	&.sm {
+		font-size: 20px;
+	}
+}
+
+.link-with-close {
+	font-size: 22px;
+	font-weight: 700;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	transition: color 0.3s;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 26px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 28px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: 32px;
+	}
+
+	&:after {
+		content: "\e905";
+		font-size: 0.5em;
+		font-family: icomoon;
+		display: inline;
+		font-weight: 400;
+		margin-left: 10px;
+		vertical-align: middle;
+	}
+
+	&.text-white {
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
+	&.text-secondary {
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
+	&.text-primary {
+		&:hover {
+			color: $white !important;
+		}
+	}
+}

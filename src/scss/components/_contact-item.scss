@@ -1,0 +1,54 @@
+.contact-item {
+	display: flex;
+	margin-bottom: 32px;
+
+	&__icon-round {
+		@include sizeElement(32px);
+		@include inlineFlexCenter;
+
+		flex: 0 0 auto;
+		max-width: 100%;
+		border-radius: 50%;
+		background-color: $primary;
+		flex-shrink: 0;
+		padding: 8px;
+
+		@include media-breakpoint-up(sm) {
+			@include sizeElement(44px);
+
+			padding: 10px;
+		}
+	}
+
+	&__icon {
+		max-height: 100%;
+	}
+
+	&__content {
+		flex: 1 0 0%;
+		max-width: 100%;
+		width: 100%;
+		padding: 4px 0 0 13px;
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 8px;
+		}
+
+		a {
+			color: $secondary;
+			transition: color 0.3s;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	&__bottom-content {
+		margin-left: -48px;
+
+		@include media-breakpoint-up(sm) {
+			margin-left: 0;
+		}
+	}
+}

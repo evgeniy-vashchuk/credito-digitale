@@ -1,0 +1,22 @@
+extends ../templates/main-template.pug
+
+block vars
+	- var pageTitle = "404 - Credito Digitale";
+
+block content
+	// SECTION
+	section.section
+		.container
+			.row.mb-14.mb-md-15
+				.col-md-8.offset-md-4
+					h1.h2.mb-8 Oops!
+					.text-block.mb-10.mb-md-13
+						p La pagina che stai cercando è stata spostata, rimossa o potrebbe non esistere
+					.text-end.text-sm-start
+						a(href="index.html" class="link-with-arrow text-secondary") Torna alla home
+			.row.justify-content-center.justify-content-md-end.align-items-center
+				.col-2.col-md-3.mb-8.mb-md-0
+					img(src="img/lightning.svg" alt="Image")
+				.col-md-8
+					img(src="img/404.svg" alt="Image")
+	// SECTION END

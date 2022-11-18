@@ -1,0 +1,268 @@
+.form-control {
+	@include placeholder {
+		text-overflow: ellipsis;
+	};
+
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	box-shadow: none !important;
+	padding-top: 0;
+
+	@include media-breakpoint-down(xxl) {
+		font-size: 20px;
+	}
+
+	@include media-breakpoint-down(md) {
+		font-size: 18px;
+	}
+
+	&.white-style {
+		@include placeholder {
+			color: $white;
+		};
+
+		border-color: $white;
+		color: $white;
+
+		&:focus {
+			border-color: $input-focus-border-color;
+		}
+	}
+}
+
+textarea {
+	&.form-control {
+		@include customScrollbar(10px, $secondary, $primary);
+
+		height: 140px;
+
+		@include media-breakpoint-up(sm) {
+			height: 220px;
+		}
+	}
+}
+
+.form-item-wrap {
+	position: relative;
+	margin-bottom: 45px;
+
+	@include media-breakpoint-up(sm) {
+		margin-bottom: 60px;
+	}
+
+	.invalid-feedback {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+
+		@include media-breakpoint-down(sm) {
+			font-size: 14px;
+		}
+	}
+
+	&.disable-select-absolute {
+		.select2-container {
+			&.select2-container--default {
+				position: static !important;
+				width: 100% !important;
+				margin-top: -1px;
+
+				.select2-dropdown {
+					position: static !important;
+					width: 100% !important;
+					border: $input-border-width solid $input-border-color;
+
+					.select2-results__options {
+						max-height: initial !important;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.custom-checkbox {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1.4;
+	cursor: pointer;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 18px;
+	}
+
+	&__input {
+		@include visuallyHidden;
+
+		&:checked {
+			+ .custom-checkbox__item {
+				.custom-checkbox__mark {
+					background-color: $primary;
+
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: inline-block;
+		padding-left: 32px;
+	}
+
+	&__mark {
+		@include sizeElement(24px);
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		margin-top: -1px;
+		display: inline-block;
+		border-radius: 1px;
+		border: 1px solid $primary;
+		transition: background-color 0.3s;
+
+		&:after {
+			@include absoluteCenter;
+
+			content: "\e901";
+			display: inline-block;
+			font-family: icomoon;
+			color: $secondary;
+			font-size: 20px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+	}
+
+	&__text {
+		a {
+			text-decoration: underline;
+			color: inherit;
+			transition: color 0.3s;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.select2 {
+	&.select2-container--default {
+		display: block;
+		width: 100% !important;
+
+		.select2-selection--single {
+			@extend .form-control;
+
+			height: auto;
+
+			&:focus {
+				border-bottom-color: $input-border-color;
+			}
+
+			.select2-selection__rendered {
+				padding: 0;
+				color: inherit;
+				line-height: inherit;
+			}
+
+			.select2-selection__placeholder {
+				color: inherit;
+				transition: color 0.3s;
+			}
+
+			.select2-selection__arrow {
+				display: inline-flex;
+				line-height: 1;
+				height: auto;
+				width: auto;
+				top: 8px;
+				right: 0;
+				color: $secondary;
+				font-size: 8px;
+				transform-origin: center;
+				transition: transform 0.3s, color 0.3s;
+
+				@include media-breakpoint-up(md) {
+					top: 10px;
+					font-size: 11px;
+				}
+
+				&:before {
+					content: "\e900";
+					font-family: icomoon;
+				}
+
+				b {
+					display: none;
+				}
+			}
+		}
+
+		&.select2-container--open {
+			.select2-selection--single {
+				.select2-selection__placeholder {
+					color: $gray-500;
+				}
+
+				.select2-selection__arrow {
+					color: $primary;
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
+
+.select2-container {
+	&.select2-container--default {
+		.select2-dropdown {
+			border-color: $secondary;
+			border-radius: 0;
+			z-index: $zindex-select-dropdown;
+
+			.select2-results__options {
+				@include customScrollbar(4px, $input-border-color, $primary);
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 16px;
+				margin: 0 -1px -1px;
+
+				@include media-breakpoint-up(md) {
+					padding: 24px;
+				}
+			}
+
+			.select2-results__option {
+				display: inline-block;
+				padding: 0;
+				color: $secondary;
+				transition: color 0.3s;
+
+				&.select2-results__option--highlighted {
+					background-color: transparent;
+					color: $primary;
+				}
+
+				&.select2-results__option--selected {
+					background-color: transparent;
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+}

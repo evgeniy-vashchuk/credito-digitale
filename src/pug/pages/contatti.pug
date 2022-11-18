@@ -1,0 +1,109 @@
+extends ../templates/main-template.pug
+
+block vars
+	- var pageTitle = "Contatti - Credito Digitale";
+	- var activeMenuLink = "Contatti";
+
+block content
+	// SECTION
+	section.section.pb-0
+		.container
+			.mb-10.mb-lg-15
+				h1.h2.mb-6.mb-lg-8 Contatti
+				.text-block
+					p Scrivici per scoprire quanto risparmi!
+			|
+			|
+			.row
+				.col-md-4
+					.section.pt-0.remove-last-child-margin
+						.contact-item(data-aos="fade-right")
+							.contact-item__icon-round
+								img(src="img/contact-item/1.svg" alt="Icon" class="contact-item__icon")
+							.contact-item__content
+								h6.mb-4 Sedi operative
+								.contact-item__bottom-content
+									.text-block.text-without-indents
+										p: a(href="https://maps.google.com/?q=ViaSpartaco10,Milano" target="_blank") Via Spartaco 10, Milano
+										p: a(href="https://maps.google.com/?q=ViaGiovanniFrancescoNapione22,Torino" target="_blank") Via Giovanni Francesco Napione 22, Torino
+						.contact-item(data-aos="fade-right")
+							.contact-item__icon-round
+								img(src="img/contact-item/2.svg" alt="Icon" class="contact-item__icon")
+							.contact-item__content
+								h6.mb-4 Numero di telefono
+								.contact-item__bottom-content
+									.text-block.text-without-indents
+										p: a(href="tel:+393403840700" target="_blank") +39 340 3840700
+						.contact-item(data-aos="fade-right")
+							.contact-item__icon-round
+								img(src="img/contact-item/3.svg" alt="Icon" class="contact-item__icon")
+							.contact-item__content
+								h6.mb-4 Email
+								.contact-item__bottom-content
+									.text-block.text-without-indents
+										p: a(href="mailto:info@credito-digitale.it" target="_blank") info@credito-digitale.it
+						.contact-item(data-aos="fade-right")
+							.contact-item__icon-round
+								img(src="img/contact-item/4.svg" alt="Icon" class="contact-item__icon")
+							.contact-item__content
+								h6.mb-4 Social
+								.contact-item__bottom-content
+									ul.social-list
+										li.social-list__item
+											a(href="#" class="social-list__link")
+												span.icomoon-facebook
+										li.social-list__item
+											a(href="#" class="social-list__link")
+												span.icomoon-instagram
+										li.social-list__item
+											a(href="#" class="social-list__link")
+												span.icomoon-linkedin
+				|
+				|
+				.col-md-8.d-md-flex
+					.js-map-multiple-markers.google-map
+	// SECTION END
+	|
+	|
+	// SECTION WRITE TO US
+	section.section-write-to-us.section#section-write-to-us(style="background-image: url(img/section-write-to-us-bg.svg)")
+		.container
+			.row.justify-content-end
+				.col-md-8
+					form.js-form-write-to-us
+						//  Hidden Required Fields
+						input(type="hidden" name="project_name" value="Credito Digitale")
+						input(type="hidden" name="admin_email" value="info@credito-cigitale.com")
+						input(type="hidden" name="form_subject" value="Credito Digitale - Email from contact form")
+						//  END Hidden Required Fields
+						|
+						|
+						h2 Scrivici per saperne di più!
+						|
+						|
+						.form-item-wrap
+							input(type="email" name="E-mail" class="form-control white-style" placeholder="Indirizzo email*" required)
+						.form-item-wrap
+							input(type="text" name="Phone" class="form-control white-style js-only-numbers" placeholder="Numero di telefono")
+						.form-item-wrap
+							input(type="text" name="Company" class="form-control white-style" placeholder="Ragione sociale dell’azienda" minlength="3")
+						.form-item-wrap
+							textarea(name="Message" class="form-control white-style" placeholder="Messaggio*" required minlength="10")
+						.form-item-wrap
+							label.custom-checkbox
+								input(type="checkbox" name="privacy policy" class="custom-checkbox__input" value="Privacy policy" required)
+								span.custom-checkbox__item
+									span.custom-checkbox__mark
+									span.custom-checkbox__text Acconsento al trattamento dei miei dati personali secondo le modalità previste dall'<a href="privacy-policy.html" target="_blank">Informativa sulla Privacy</a>*
+						|
+						|
+						.text-end.text-sm-start
+							button(type="submit" class="link-with-arrow text-white") Invia messaggio
+					|
+					|
+					.js-form-write-to-us-success.d-none
+						h2 Grazie!
+						.text-block.mb-10.mb-xxl-15
+							p La procedura è molto semplice e trasparente e se ne occupa interamente il nostro team di esperti.
+						a(href="index.html" class="link-with-arrow text-primary") Torna alla home
+	// SECTION WRITE TO US END

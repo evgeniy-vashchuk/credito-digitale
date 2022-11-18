@@ -1,0 +1,71 @@
+body {
+	@include customScrollbar(10px, $secondary, $primary);
+
+	min-width: 320px;
+}
+
+.main {
+	overflow: hidden;
+
+	> .section {
+		&:first-child {
+			&.section-welcome {
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+.container,
+.container-fluid {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@include media-breakpoint-down(lg) {
+		max-width: map-get($container-max-widths, "lg");
+	}
+
+	@include media-breakpoint-up(sm) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+
+.row {
+	&.g-0 {
+		margin: 0 !important;
+
+		[class^="col"],
+		.col {
+			padding: 0 !important;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+
+	[class^="col"],
+	.col {
+		@include media-breakpoint-down(lg) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+	}
+}
+
+::selection {
+	background-color: $primary;
+	color: $white;
+}

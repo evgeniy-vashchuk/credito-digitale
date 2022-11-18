@@ -1,0 +1,37 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 1. Configuration and helpers
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// 2. Vendors
+@import "vendors/libs";
+
+// 3. Base stuff
+@import "base/reset";
+@import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/helpers";
+@import "base/keyframes";
+
+// 4. Layout-related sections
+@import "layout/header";
+@import "layout/footer";
+
+// 5. Components
+@import "components/buttons";
+@import "components/forms";
+@import "components/sections";
+@import "components/cards";
+@import "components/hamburger-menu";
+@import "components/union-figure";
+@import "components/round-icon";
+@import "components/bordered-grid";
+@import "components/accordion";
+@import "components/contact-item";
+@import "components/social-list";
+@import "components/google-map";
+@import "components/modal";
+@import "components/cookies-banner";

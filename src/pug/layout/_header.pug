@@ -1,0 +1,26 @@
+header.header.fixed-top.js-header
+	.header__wrap
+		.container
+			.header__main-content
+				a(href="index.html" class="header__logo")
+					img(src="img/logo.svg" alt="Logo")
+				|
+				|
+				.header__right-content
+					.header__menu.js-header-menu
+						ul.header-nav
+							li.header-nav__item
+								a(href="index.html" class= (activeMenuLink === "Home" ? "header-nav__link active" : "header-nav__link")) Home
+							li.header-nav__item
+								a(href="servizi.html" class= (activeMenuLink === "Servizi" ? "header-nav__link active" : "header-nav__link")) Servizi
+							li.header-nav__item
+								a(href="chi-siamo.html" class= (activeMenuLink === "Chi siamo" ? "header-nav__link active" : "header-nav__link")) Chi siamo
+							li.header-nav__item
+								a(href="contatti.html" class= (activeMenuLink === "Contatti" ? "header-nav__link active" : "header-nav__link")) Contatti
+							li.header-nav__item
+								a(href="preventivatore.html" class= (activeMenuLink === "Preventivatore" ? "header-nav__link active" : "header-nav__link")) Preventivatore
+					|
+					|
+					a.hamburger-menu.d-md-none.js-hamburger-menu(href="#" aria-label="Toggle menu")
+						.hamburger-menu__wrap
+							.hamburger-menu__bars

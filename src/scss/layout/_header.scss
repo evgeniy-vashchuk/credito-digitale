@@ -1,0 +1,169 @@
+.header {
+	background-color: $secondary;
+	border-bottom: 1px solid $gray-700;
+
+	&.active {
+		.header__wrap {
+			padding: 16px 0;
+		}
+	}
+
+	&.fixed-top {
+		+ .main {
+			padding-top: 72px;
+
+			@include media-breakpoint-up(md) {
+				padding-top: 100px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 107px;
+			}
+
+			@include media-breakpoint-up(xxl) {
+				padding-top: 120px;
+			}
+		}
+	}
+
+	&__wrap {
+		padding: 16px 0;
+		transition: padding 0.3s;
+
+		@include media-breakpoint-up(md) {
+			padding: 30px 0;
+		}
+	}
+
+	&__main-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__right-content {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		padding-left: 30px;
+	}
+
+	&__logo {
+		display: inline-flex;
+		max-width: 110px;
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 130px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			max-width: 165px;
+		}
+	}
+
+	&__menu {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			justify-content: end;
+		}
+
+		@include media-breakpoint-down(md) {
+			position: fixed;
+			top: 72px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: calc(100vh - 72px);
+			height: calc(var(--vh, 1vh) * 100 - 72px);
+			background-color: $secondary;
+			overflow: auto;
+			padding: 56px 32px;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s, visibility 0.3s;
+		}
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.header-nav {
+	@include listReset;
+
+	font-size: 24px;
+
+	@include media-breakpoint-up(md) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		font-size: 20px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: 24px;
+	}
+
+	&__item {
+		@include media-breakpoint-up(md) {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		&:not(:last-child) {
+			@include media-breakpoint-down(md) {
+				margin-bottom: 32px;
+			}
+		}
+
+		&:not(:first-child) {
+			@include media-breakpoint-up(md) {
+				margin-left: 24px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				margin-left: 48px;
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		color: $white;
+		transition: color 0.3s;
+
+		&.active {
+			color: $primary;
+			font-weight: 700;
+		}
+
+		&:not(.active) {
+			&:after {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				display: block;
+				height: 2px;
+				width: 100%;
+				background-color: $primary;
+				opacity: 0;
+				transition: opacity 0.3s;
+			}
+
+			&:hover {
+				color: $white;
+
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

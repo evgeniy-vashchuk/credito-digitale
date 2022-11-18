@@ -1,0 +1,107 @@
+extends ../templates/main-template.pug
+
+block vars
+	- var pageTitle = "Preventivatore - Credito Digitale";
+	- var activeMenuLink = "Preventivatore";
+
+block content
+	// SECTION
+	section.section
+		.container
+			.row.justify-content-end
+				.col-lg-8
+					h1.h2.mb-6.mb-md-8 Calcola il credito d’imposta
+					p.mb-10 Digitalizzare i processi produttivi non è mai stato così conveniente.
+					p.mb-13.mb-md-15 Inserendo di seguito il costo del personale che sostiene annualmente la tua azienda, il numero dei lavoratori subordinati e selezionando il macro settore merceologico, possiamo stimare a quanto può ammontare il credito d’imposta che potrai utilizzare per realizzare un software aziendale ad hoc per portare la tua attività nel futuro digitale 4.0.
+					|
+					|
+					form.js-form-calculate-the-tax-credit
+						.row
+							.col-sm-6
+								.form-item-wrap
+									input(type="text" name="Annual staff cost" class="form-control js-mask-money js-annual-staff-cost" placeholder="Costo del personale annuo" required)
+							.col-sm-6
+								.form-item-wrap
+									input(type="number" name="Number of employees" class="form-control js-only-numbers" placeholder="Numero di lavoratori subordinati" required min="0")
+							.col-12
+								.form-item-wrap.disable-select-absolute.js-select-parent
+									select.js-select(name="Macro sector" data-placeholder="Macro settore")
+										option(label=" ")
+										option(value="Costruzioni ed Estrazioni") Costruzioni ed Estrazioni
+										option(value="Attività manifatturiere") Attività manifatturiere
+										option(value="Trasporto e magazzinaggio") Trasporto e magazzinaggio
+										option(value="Sanità, Servizi Sociali") Sanità, Servizi Sociali
+										option(value="Agricoltura e Pesca") Agricoltura e Pesca
+										option(value="Pubblica Amministrazione") Pubblica Amministrazione
+										option(value="Istruzione") Istruzione
+										option(value="Attività dei servizi di alloggio e ristorazione") Attività dei servizi di alloggio e ristorazione
+										option(value="Attività finanziarie e assicurative") Attività finanziarie e assicurative
+										option(value="Attività artistiche, sportive, di intrattenimento e divertimento") Attività artistiche, sportive, di intrattenimento e divertimento
+										option(value="Altro") Altro
+							.col-12
+								button(type="submit" class="link-with-arrow text-secondary") Calcola
+			|
+			|
+			.modal.fade#modalCalculateTheTaxCredit(tabindex="-1" aria-labelledby="modalCalculateTheTaxCreditLabel" aria-hidden="true")
+				.modal-dialog.modal-dialog-centered.modal-xl
+					.modal-content
+						button.modal__close-btn(type="button" data-bs-dismiss="modal" aria-label="Close")
+							span.icomoon-close
+						|
+						|
+						.modal-header
+							.modal__logo
+								img(src="img/logo-dark.svg" alt="Logo")
+						|
+						|
+						.slider-calculate-the-tax-credit
+							.js-slider-calculate-the-tax-credit
+								div
+									.modal-body
+										h2.mb-6.mb-md-8#modalCalculateTheTaxCreditLabel Ci siamo!
+										p.mb-8.mb-md-10 Ecco cosa dicono i nostri analisti:
+										p.mb-8.mb-md-13 In base ai dati inseriti, il range di credito d’imposta che potremmo generare per realizzare un prodotto informatico ad hoc per la tua azienda va:
+										p.mb-10.mb-md-15 da <span class="h4">€<span class="js-calc-lower-number">0</span></span> a <span class="h4">€<span class="js-calc-upper-number">0</span></span>
+									.modal-footer
+										a(href="#" class="link-with-arrow text-secondary js-go-next-slide") Scopri di più
+								div
+									.modal-body
+										h2 Siamo pronti per vincere con te la sfida al 4.0!
+										p.mb-10.mb-md-15 Prenota una consulenza online gratuita di 45 minuti con un nostro analista per comprendere i prossimi passi per realizzare un software aziendale ad hoc tramite il credito d’imposta.
+										.mb-10.mb-md-15.text-end
+											a(href="https://calendly.com/creditodigitale/call-conoscitiva" class="link-with-arrow text-secondary" target="_blank") Prenota consulenza gratuita
+										form.js-form-contact
+											//  Hidden Required Fields
+											input(type="hidden" name="project_name" value="Credito Digitale")
+											input(type="hidden" name="admin_email" value="info@credito-cigitale.com")
+											input(type="hidden" name="form_subject" value="Credito Digitale - Email from contact form")
+											//  END Hidden Required Fields
+											|
+											|
+											h6.mb-8.mb-md-13 In alternativa, per essere ricontattato, puoi compilare il seguente form:
+											|
+											|
+											.form-item-wrap
+												input(type="text" name="Name and surname" class="form-control" placeholder="Nome e cognome*" minlength="3" required)
+											.form-item-wrap
+												input(type="text" name="Business name" class="form-control" placeholder="Ragione sociale*" minlength="3" required)
+											.form-item-wrap
+												input(type="email" name="email" class="form-control" placeholder="Email*" required)
+											.form-item-wrap
+												input(type="text" name="phone" class="form-control js-only-numbers" placeholder="Telefono")
+											|
+											|
+											.text-end
+												button(type="submit" class="link-with-arrow text-secondary") Invia
+								div
+									.modal-body
+										h2.mb-6.mb-md-8 Grazie!
+										p.mb-10.mb-md-15 Verrai ricontattato da un nostro analista il prima possibile.
+									.modal-footer
+										a(href="#" class="link-with-close text-secondary" data-bs-dismiss="modal" aria-label="Close") Chiudi
+	// SECTION END
+	|
+	|
+	// SECTION CONTACT US
+	include ../includes/_section-contact-us.pug
+	// SECTION CONTACT US END
