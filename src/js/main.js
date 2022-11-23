@@ -4,8 +4,8 @@ if (location.hash) {
 	window.scrollTo(0, 0);
 
 	setTimeout(function() {
-			window.scrollTo(0, 0);
-	}, 1);
+		window.scrollTo(0, 0);
+	}, 50);
 }
 
 $(function() {
@@ -429,8 +429,10 @@ $(function() {
 			if (animationComplete && element.length) {
 				animationComplete = false;
 
+				var additionalOffset = element.attr('data-offset') === undefined ? 0 : +element.attr('data-offset');
+
 				$('body, html').animate({
-					scrollTop: element.offset().top - offset
+					scrollTop: element.offset().top - (offset + additionalOffset)
 				}, 500).promise().done(function() {
 					animationComplete = true;
 				});

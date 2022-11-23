@@ -409,6 +409,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
+$body-bg-overlay:           $primary !default;
 $body-color:                $secondary !default;
 $body-text-align:           null !default;
 

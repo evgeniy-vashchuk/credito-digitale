@@ -22,7 +22,6 @@
 			position: relative;
 			overflow: hidden;
 			margin-bottom: 8px;
-			border-radius: 4px;
 
 			@include media-breakpoint-up(sm) {
 				@include responsiveRatio(708, 400);

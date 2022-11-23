@@ -22,6 +22,19 @@
 	}
 
 	&-welcome {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			right: 0;
+			height: 1000px;
+			display: block;
+			background-color: $primary;
+		}
+
 		&__wrap {
 			background-color: $secondary;
 			color: $white;

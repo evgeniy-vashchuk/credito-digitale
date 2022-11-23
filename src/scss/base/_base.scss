@@ -1,11 +1,14 @@
 body {
 	@include customScrollbar(10px, $secondary, $primary);
 
+	background-color: $body-bg-overlay;
 	min-width: 320px;
 }
 
 .main {
+	position: relative;
 	overflow: hidden;
+	background-color: $body-bg;
 
 	> .section {
 		&:first-child {
